@@ -1,0 +1,14 @@
+CREATE KEYSPACE spring WITH REPLICATION = {
+  'class': 'SimpleStrategy',
+  'replication_factor': 1
+}
+
+CREATE TABLE topics (
+  topic_code text,
+  topic_name text,
+  creation_date timestamp,
+  PRIMARY KEY (topic_code, creation_date)
+);
+
+INSERT INTO topics(topic_code, topic_name, creation_date) VALUES ('math', 'Math', '2018-07-30T00:00Z');
+INSERT INTO topics(topic_code, topic_name, creation_date) VALUES ('code', 'Programming', '2018-07-30T23:30Z');
