@@ -33,7 +33,7 @@ public class Repo {
     
     public Repo() {
         Cluster.Builder builder = Cluster.builder();
-        builder.addContactPoint("127.0.0.1").withLoadBalancingPolicy(new RoundRobinPolicy());
+        builder.addContactPoint("localhost").withLoadBalancingPolicy(new RoundRobinPolicy());
         
         SocketOptions socketOptions = new SocketOptions().setKeepAlive(false);
         socketOptions.setConnectTimeoutMillis(5000);
@@ -66,7 +66,6 @@ public class Repo {
         for (Topic t : topics) {
             System.out.println("Topic : " + t);
         }
-
 
         return null;
     }
